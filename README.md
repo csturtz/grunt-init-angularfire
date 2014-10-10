@@ -11,7 +11,7 @@ A grunt-init template meant for creating a Single-Page App with AngularJS, Fireb
 
 ### Prerequisites
 * Grunt Installed
-*  Node Installed >= 0.1.0
+* Node Installed >= 0.10.0
 
 ### Installation
 * Coming Soon
