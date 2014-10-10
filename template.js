@@ -24,8 +24,26 @@
  exports.template = function(grunt, init, done) {
 
  	init.process({},[
+ 		init.prompt(project_name);
+ 		init.prompt(project_version, '0.0.1');
+ 		init.prompt(author_name);
  		init.prompt(firebase_name);
  	],function(err,props){
+
+ 		// write package.json
+ 		init.writePackageJSON('package.json', {
+ 			name: props.project_name,
+ 			version: props.project_version,
+ 			author: {
+ 				'name': props.author_name
+ 			},
+ 			engines: {
+ 				'node': ">= 0.10.0"
+ 			},
+ 			devDependencies: {
+ 				
+ 			}
+ 		});
 
  		// write firebase.json
  		init.writePackageJSON('firebase.json', {
