@@ -24,10 +24,30 @@
  exports.template = function(grunt, init, done) {
 
  	init.process({},[
- 		init.prompt(project_name);
- 		init.prompt(project_version, '0.0.1');
- 		init.prompt(author_name);
- 		init.prompt(firebase_name);
+ 		{
+ 			name: 'project_name',
+ 			message: 'Enter the Project Name',
+ 			default: 'HelloWorld',
+ 			warning: 'Please give your project a name'
+ 		},
+ 		{
+ 			name: 'project_version',
+ 			message: 'Enter the Initial Project Version',
+ 			default: '0.0.1',
+ 			warning: 'Please provide an initial version'
+ 		},
+ 		{
+ 			name: 'author_name',
+ 			message: 'Enter Your Name',
+ 			default: 'Captain Awesome',
+ 			warning: 'Please enter your name'
+ 		},
+ 		{
+ 			name: 'firebase_name',
+ 			message: 'Enter the Name of your Firebase',
+ 			default: 'HelloWorld',
+ 			warning: 'Please enter the name of your Firebase'
+ 		}
  	],function(err,props){
 
  		// write package.json
@@ -41,7 +61,7 @@
  				'node': ">= 0.10.0"
  			},
  			devDependencies: {
- 				
+
  			}
  		});
 
