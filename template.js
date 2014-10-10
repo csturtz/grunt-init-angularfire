@@ -51,6 +51,14 @@
  				'source': "**",
  				'destination': "/index.html"
  			} ]
+ 		}, function(pkg, props) {
+ 			['firebase','public','ignore','rewrites'].forEach(function(prop){
+ 				var val = props[prop];
+ 				if (val !== undefined && val !== null) {
+ 					pkg[prop] = val;
+ 				}
+ 			});
+ 			return pkg;
  		});
  	});
 
